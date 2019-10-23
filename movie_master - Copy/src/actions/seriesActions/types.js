@@ -1,0 +1,4 @@
+export const GET_ALL_SERIES = 'GET_ALL_SERIES'
+export const SERIES_VIDEO = 'SERIES_VIDEO'
+export const SERIES_DETAILS = 'SERIES_DETAILS'
+export const SERIES_FILTER = 'SERIES_FILTER'

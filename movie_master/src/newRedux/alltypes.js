@@ -1,0 +1,23 @@
+export const GET_DATA = 'GET_DATA'
+export const GET_DATA_REJECTED = 'GET_DATA_REJECTED'
+
+export const SHOW_MORE = "SHOW_MORE"
+export const SHOW_LESS = "SHOW_LESS"
+
+export const GET_SERIE = "GET_SERIE"
+export const GET_SERIE_DETAILS = " SERIE_DETAILS";
+export const GET_SERIES_VIDEO = " SERIES_VIDEO";
+export const GET_BEST_SERIES = " GET_BEST_SERIES";
+export const GET_ALL_SERIES = "  GET_ALL_SERIES";
+
+export const GET_NOW_PLAY = "GET_NOW_PLAY"
+export const GET_CATEGORY_FILTER = "GET_CATEGORY_FILTER"
+
+export const GET_CASTING_CREW = " GET_CASTING_CREW";
+export const GET_COMING_SOON = " GET_COMING_SOON";
+export const GET_BEST_ACTORS = " GET_BEST_ACTORS";
+export const GET_ALL_MOVIES = "GET_ALL_MOVIES";
+export const GET_MOVIE = "GET_MOVIE";
+export const GET_MOVIE_DETAILS = "GET_MOVIE_DETAILS"
+export const GET_MOVIE_VIDEO = "GET_MOVIE_VIDEO"
+export const GET_BEST_MOVIES = "GET_BEST_MOVIES"

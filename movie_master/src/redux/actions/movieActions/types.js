@@ -1,0 +1,9 @@
+export const GET_NOW_PLAY = "GET_NOW_PLAY"
+export const GET_CASTING_CREW = " GET_CASTING_CREW";
+export const GET_COMING_SOON = " GET_COMING_SOON";
+export const GET_BEST_ACTORS = " GET_BEST_ACTORS";
+export const GET_ALL_MOVIES = "GET_ALL_MOVIES";
+export const GET_MOVIE = "GET_MOVIE";
+export const GET_MOVIE_DETAILS = "GET_MOVIE_DETAILS"
+export const GET_MOVIE_VIDEO = "GET_MOVIE_VIDEO"
+export const GET_BEST_MOVIES = "GET_BEST_MOVIES"

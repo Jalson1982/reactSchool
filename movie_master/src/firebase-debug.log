@@ -1,0 +1,21 @@
+[debug] [2019-10-16T09:19:21.810Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T09:19:21.813Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Korisnik\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-10-16T09:19:21.813Z] CLI Version:   7.6.0
+[debug] [2019-10-16T09:19:21.813Z] Platform:      win32
+[debug] [2019-10-16T09:19:21.813Z] Node Version:  v10.16.0
+[debug] [2019-10-16T09:19:21.814Z] Time:          Wed Oct 16 2019 11:19:21 GMT+0200 (Central European Summer Time)
+[debug] [2019-10-16T09:19:21.814Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T09:19:21.822Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T09:19:21.823Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Korisnik\Desktop\movie_master\reactSchool\movie_master\src
+

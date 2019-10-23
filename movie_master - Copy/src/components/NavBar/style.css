@@ -1,0 +1,6 @@
+.hoverButton:hover {
+    border-bottom: 2px solid red;
+    background-color: rgba(94, 95, 94, 0.3);
+    border-radius:4px;
+   
+}
