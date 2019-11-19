@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import Search from "./pages/Search";
-import PageLayoutSwitcher from './pages/Layout';
-
+import PageLayoutSwitcher from './containers/Layout';
 
 class App extends Component {
   render() {

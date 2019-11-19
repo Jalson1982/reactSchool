@@ -5,8 +5,8 @@ import MidPageJumbo from '../components/Jumbotron/index';
 import FooterComp from '../components/Footer/index';
 import NavBar from '../components/NavBar/index';
 import ButtonCategories from '../components/ButtonCategories/index';
-import SmartPropsHOC from '../containers/SmartPropsHOC';
-import LoadingStatus from '../containers/LoadingStatus';
+import SmartPropsHOC from './SmartPropsHOC';
+import LoadingStatus from './LoadingStatus';
 import { connect } from "react-redux";
 import {
   seriesFilter,

@@ -35,9 +35,9 @@ class SmartPropsHOC extends Component {
         const {
             movies, categories, details, videoKey, searched, loading, showModal,
             moviesToDisplay, errorMessage, headerTitle, searchAndCategoriesTitle,
-            pageBackground, navbarLogo, arrow, cardLogo, headerLogo, jumbotronLogo,
-            getMovie, getNowPlay, movieFilter, seriesFilter, comingSoon, movieDetails,
-            serieDetails, categoryFilter, showMoreHandler, showLessHandler, movieVideo, serieVideo, castingCrew,
+            pageBackground, arrow, cardLogo, headerLogo, jumbotronLogo,
+            getMovie, movieDetails, movieVideo, serieVideo, castingCrew,
+            serieDetails, categoryFilter,
             getAllMovies
         } = this.props
 
@@ -86,9 +86,10 @@ class SmartPropsHOC extends Component {
 
                     dynamic_data: {
                         loading: loading,
+                        movies: movies,
                         searched: searched,
                         showModal: showModal,
-                        movies: movies,
+                        errorMessage: errorMessage,
                         details: details,
                         searchAndCategoriesTitle: searchAndCategoriesTitle,
                         moviesToDisplay: moviesToDisplay,
@@ -111,6 +112,7 @@ class SmartPropsHOC extends Component {
                         searched: searched,
                         showModal: showModal,
                         movies: movies,
+                        errorMessage: errorMessage,
                         details: details,
                         videoKey: videoKey,
                         searchAndCategoriesTitle: searchAndCategoriesTitle,
@@ -187,7 +189,6 @@ const mapStateToProp = state => {
         headerTitle: state.headerTitle,
         searchAndCategoriesTitle: state.searchAndCategoriesTitle,
         pageBackground: state.pageBackground,
-        navbarLogo: state.navbarLogo,
         arrow: state.arrow,
         cardLogo: state.cardLogo,
         headerLogo: state.headerLogo,
