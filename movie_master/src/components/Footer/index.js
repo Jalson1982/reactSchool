@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-    Card,
-    Button,
     Container,
     Col,
     Row,
@@ -9,60 +7,60 @@ import {
     FormControl
 
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
+import { withRouter, BrowserRouter as Router } from "react-router-dom";
+import './style.css'
 
-export default function index() {
+const Footer = props => {
+
+    const {
+        left_section,
+        mid_section,
+        right_section,
+        copy_rights
+    } = props.components_data.static_data;
     return (
-        <div style={{ backgroundColor: 'black' }}>
-            <Container style={{ padding: '3rem 2rem', color: 'white' }} >
-                <Container>
-                    <Row>
-                        <Col lg={6}> <h1 style={{ padding: '1rem 0 2rem 2rem ' }}> 🅼🅾🆅🅸🅴 🅼🅰🆂🆃🅴🆁</h1>
-                        </Col>
-                        <Col></Col>
-                        <Col lg={4} style={{ paddingTop: '1rem' }}>
-                            <SocialIcon url="http://twitter.com/ " />
-                            <SocialIcon url="http://facebook.com/ " />
-                            <SocialIcon url="http://google.com/ " />
-                            <SocialIcon url="http://whatsapp.com/ " />
-                            <SocialIcon url="http://instagram.com/ " />
-                        </Col>
-                    </Row>
-                </Container>
+        <div className='footer_frame' >
+            <Container className='central_layout' >
+                <Row>
+                    <Col lg={6}>
+                        {/* <withRouter> fixxxxxxxxxxxxxxx router </withRouter>*/}
 
-                <Row style={{ padding: '2rem', backgroundImage: 'linear-gradient(black,rgba(235, 25, 25, 0.7))', borderRadius: '5px' }}>
-                    <Col lg={5} >
-                        <div >
-                            <h3 >ABOUT US</h3>
-                            <h6 style={{ padding: '2rem 2rem 0 0' }}>
-                                ko sam ja? Ja sam samostalna književnica i blogerica, bivša TV voditeljica i novinarka, diplomirana profesorica hrvatskog jezika, književnosti i filozofije. Dobitnica sam nagrade – Influencer godine u kategoriji “književnost” za 2018. godinu po izboru čitatelja i časopisa Cosmopolitan.
-                            </h6>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div >
-                            <h3>MENU</h3>
-                            <h5 style={{ padding: '2rem 2rem 0 0' }}>
-                                Contacts
-                            </h5>
-                            <h5>Terms & Conditions</h5>
-                            <h5>Privacy Policy</h5>
-                            <h5>Members</h5>
-                            <h5>Promos</h5>
-                        </div>
+                        <Link to='/' className='illustrated_title'>
+                            🅼🅾🆅🅸🅴 🅼🅰🆂🆃🅴🆁
+                        </Link>
 
                     </Col>
-                    <Col >
-                        <div style={{}}>
-                            <h3>NEWSLETTER</h3>
-                        </div>
-
-
-                        <h6 style={{ padding: '2rem 2rem 0 0' }}>
-                            A rover wearing a fuzzy suit dosen't alarm the real penguins, be who you are and enjoy Movies
-                        </h6>
+                    <Col></Col>
+                    <Col lg={4} className='social_icons_layout'>
+                        <SocialIcon className='social_icons_select' url="http://twitter.com/ " />
+                        <SocialIcon className='social_icons_select' url="http://facebook.com/ " />
+                        <SocialIcon className='social_icons_select' url="http://google.com/ " />
+                        <SocialIcon className='social_icons_select' url="http://whatsapp.com/ " />
+                        <SocialIcon className='social_icons_select' url="http://instagram.com/ " />
+                    </Col>
+                </Row>
+                <Row className='mid_content_wrapper'>
+                    <Col lg={5} className='section_padding' >
+                        <h3 >{left_section.title}</h3>
+                        <br></br>
+                        <h6  >{left_section.text} </h6>
+                    </Col>
+                    <Col className='section_padding'>
+                        <h3 > {mid_section.title}</h3>
+                        <br></br>
+                        <h5 className='mid_section_links'>{mid_section.link_1}                                </h5>
+                        <h5 className='mid_section_links'> {mid_section.link_2}</h5>
+                        <h5 className='mid_section_links'>{mid_section.link_3}</h5>
+                        <h5 className='mid_section_links'>{mid_section.link_4}</h5>
+                        <h5 className='mid_section_links'>{mid_section.link_5}</h5>
+                    </Col>
+                    <Col className='section_padding'>
+                        <h3>{right_section.title}</h3>
+                        <br></br>
+                        <h6 >{right_section.text}</h6>
                         <InputGroup className="mb-3">
-
                             <FormControl
                                 style={{ marginTop: '2rem' }}
                                 placeholder="Username"
@@ -77,13 +75,13 @@ export default function index() {
                 </Row>
                 <Row>
                     <Col></Col>
-                    <Col style={{ paddingTop: '1.5rem', fontSize: '1.2rem' }}> &copy; {(new Date().getFullYear())} Copyright: <a href="https://www.moviemaster.com"> moviemaster.com  </a></Col>
+                    <Col className='footer_copyrights'>
+                        &copy; {(new Date().getFullYear())} Copyright: <a href="https://www.moviemaster.com">{copy_rights.title}</a></Col>
                     <Col></Col>
-
                 </Row>
             </Container>
-
         </div>
     )
 }
 
+export default Footer;

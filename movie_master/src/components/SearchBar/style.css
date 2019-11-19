@@ -1,0 +1,59 @@
+
+.search_label{
+      height: 2.4rem;
+        font-size: 1rem;
+        font-weight: 600;
+        width: 14rem;
+        border-radius: 5px;
+        transition: 1s;
+}
+
+.search_lable_active{
+  height: 2.4rem;
+        font-size: 1rem;
+        font-weight: 600;
+        width: 25rem;
+        border-radius: 5px;
+        transition: 1s;
+}
+
+.search_label:focus {
+    border: 3px solid red;
+}
+
+.search_arrow{
+  margin:0 1rem 0 0.5rem;
+  height: 3rem; 
+   cursor: pointer;
+}
+
+.search_arrow_active{
+  height: 3rem; 
+  margin:0 1rem 0 0.5rem;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transform: scale(2); 
+  border-radius: 50%;
+}
+
+.search_arrow:hover{
+  background-image: radial-gradient(blue, black);
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(0.95);
+      background-image: radial-gradient(blue, black);
+}
+
+70% {
+  transform: scale(1);
+  background-image: radial-gradient(blue, black);
+}
+
+100% {
+  transform: scale(0.95);
+  background-image: radial-gradient(blue, black);
+}
+}

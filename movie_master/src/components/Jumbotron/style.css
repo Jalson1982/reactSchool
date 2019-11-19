@@ -1,0 +1,27 @@
+.layout {
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .button {
+    text-align: center;
+    margin:  0 ;
+    opacity: 0.9;
+    background-color: red;
+     color: white;
+    font-weight:500;
+  }
+
+  .text{
+      font-size: 3rem;
+      font-weight: 500;
+  }
+
+  .badge{
+    background-color: red;
+    opacity: 0.9;
+    color: white;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 10px;
+  }

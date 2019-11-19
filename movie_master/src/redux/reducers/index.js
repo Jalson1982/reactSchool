@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import movieReducer from './movieReducer';
 import serieReducer from './serieReducer';
-import mediaDataReducer from './mediaDataReducer';
+
 
 export default combineReducers({
 
   movies: movieReducer,
   series: serieReducer,
-  data: mediaDataReducer
+
 });
 
 

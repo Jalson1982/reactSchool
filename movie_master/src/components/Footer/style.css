@@ -1,0 +1,67 @@
+.footer_frame{
+    background-color: black ;
+}
+
+.central_layout{
+    padding: 3rem 2rem;
+     color: white;
+      background-color: black;
+       width: 100%;
+}
+
+.illustrated_title{
+    padding: 1rem 2rem 2rem 2rem ;
+    font-size:2.5rem;
+    background-color: black; 
+    color:white;
+    transition:1s;
+}
+
+.illustrated_title:hover{
+    background-image: radial-gradient(rgba(0, 0, 255, 0.712),black);
+    color:white;
+    text-decoration: none;
+    transform: scale(1.3);
+}
+
+.social_icons_layout{
+    padding-top: 1rem;
+}
+
+.social_icons_select{
+    transition:0.3s;
+}
+
+.social_icons_select:hover{
+background-image: radial-gradient(rgba(0, 0, 255, 0.712),black);
+   border:2px solid yellow;
+   border-radius: 50%;
+   transform: scale(1.3);
+   z-index: 1;
+   
+}
+
+.mid_content_wrapper{
+    padding: 2rem;
+     background-image: linear-gradient(black,rgba(235, 25, 25, 0.7));
+     border-radius: 5px;
+}
+
+.mid_section_links{
+    transition: 0.5s;
+}
+
+.mid_section_links:hover{
+   text-decoration:underline solid red;
+    cursor: pointer;
+    color:yellow;
+}
+
+.section_padding{
+    padding:1rem 6rem 0 0
+}
+
+.footer_copyrights{
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+}

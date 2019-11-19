@@ -1,6 +1,68 @@
-.hoverButton:hover {
-    border-bottom: 2px solid red;
-    background-color: rgba(94, 95, 94, 0.3);
-    border-radius:4px;
+
+
+.navbar_layout {
+    text-align: center;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-Index: 5;
+    border-bottom: 1px solid rgba(188, 188, 188, 0.4);
+
+  }
+
+  .logo_style{
+    border-right: 2px solid red;
+    margin:0 auto;
+    z-index:1;
+  }
+  .navbar_links {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    transition: 0.4s;
+    margin:auto;  
+  }
+  #basic-navbar-nav{
    
+    z-index: 2;
+  }
+
+.navbar_links:hover {   
+    background-image: radial-gradient(red,black);
+    border-radius:4px;
+    transform: scale(1.1);
 }
+
+ .hamburger_menu{
+    background-color: red;
+    opacity: 0.8;
+     float: right;
+ }
+
+  .navbar_buttons {
+    transition: 0.4s;
+     font-size: 1rem;
+      font-weight: 600; 
+      border-color: black;
+      padding:0.5rem 1.7rem;
+      margin-right:1rem;
+  }
+  .navbar_buttons:hover{
+      border-color:black;    
+      background-image: linear-gradient(black,rgba(248, 11, 15, 0.62));
+      transform: scale(1.1);
+      font-weight: 500;
+
+  }
+  .sign_up_button_color{
+    background-image: linear-gradient(black,blue);
+ 
+  }
+  .login_button_color{
+    background-image: linear-gradient(black,green);
+
+  }
+
+  
+     
+

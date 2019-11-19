@@ -1,67 +1,97 @@
 import React from 'react';
-
+import './style.css';
 import {
     Form,
     Col,
-    Button,
-
-
+    Button
 } from "react-bootstrap";
 
-const Forms = () => {
+const Forms = ({ showForm, toggleThroughForms, form_data }) => {
+    const {
+        button_close,
+        button_submit,
+        class_Name,
+        e_mail_lable_footer,
+        e_mail_lable_header,
+        e_mail_lable_placeholder,
+        password_lable_footer,
+        password_lable_header,
+        password_lable_placeholder,
+        title
+    } = form_data.login;
+
+    const {
+        signup_button_close,
+        signup_button_submit,
+        signup_class_Name,
+        signup_e_mail_lable_footer,
+        signup_e_mail_lable_header,
+        signup_e_mail_lable_placeholder,
+        signup_password_lable_footer,
+        signup_password_lable_header,
+        signup_password_lable_placeholder,
+        signup_title
+    } = form_data.signup;
+
+    const typeOfForm = showForm.typeOfForm === "Log In" ?
+        {
+            class_Name: class_Name,
+            title: title,
+            e_mail_lable_header: e_mail_lable_header,
+            e_mail_lable_placeholder: e_mail_lable_placeholder,
+            e_mail_lable_footer: e_mail_lable_footer,
+            password_lable_header: password_lable_header,
+            password_lable_placeholder: password_lable_placeholder,
+            password_lable_footer: password_lable_footer,
+            button_submit: button_submit,
+            button_close: button_close
+        } :
+        {
+            class_Name: signup_class_Name,
+            title: signup_title,
+            e_mail_lable_header: signup_e_mail_lable_header,
+            e_mail_lable_placeholder: signup_e_mail_lable_placeholder,
+            e_mail_lable_footer: signup_e_mail_lable_footer,
+            password_lable_header: signup_password_lable_header,
+            password_lable_placeholder: signup_password_lable_placeholder,
+            password_lable_footer: signup_password_lable_footer,
+            button_submit: signup_button_submit,
+            button_close: signup_button_close
+        };
 
     return (
-        <Form>
-            <Form.Row>
-                <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-            </Form.Row>
 
-            <Form.Group controlId="formGridAddress1">
-                <Form.Label>Address</Form.Label>
-                <Form.Control placeholder="1234 Main St" />
+        <Form className={typeOfForm.class_Name} >
+
+            <Form.Group className='forms_label' controlId="formBasicEmail"> <h1 className='form_title'>{typeOfForm.title}</h1>
+                <Form.Label >{typeOfForm.e_mail_lable_header}</Form.Label>
+                <Form.Control type="email" placeholder={typeOfForm.e_mail_lable_placeholder} />
+                <Form.Text className="text-muted">
+                    {typeOfForm.e_mail_lable_footer}
+                </Form.Text>
             </Form.Group>
 
-            <Form.Group controlId="formGridAddress2">
-                <Form.Label>Address 2</Form.Label>
-                <Form.Control placeholder="Apartment, studio, or floor" />
+            <Form.Group className='forms_label' controlId="formBasicPassword">
+                <Form.Label>{typeOfForm.password_lable_header}</Form.Label>
+                <Form.Control type="password" placeholder={typeOfForm.password_lable_placeholder} />
+                <Form.Text className="text-muted">
+                    {typeOfForm.password_lable_footer}
+                </Form.Text>
             </Form.Group>
-
-            <Form.Row>
-                <Form.Group as={Col} controlId="formGridCity">
-                    <Form.Label>City</Form.Label>
-                    <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridState">
-                    <Form.Label>State</Form.Label>
-                    <Form.Control as="select">
-                        <option>Choose...</option>
-                        <option>...</option>
-                    </Form.Control>
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridZip">
-                    <Form.Label>Zip</Form.Label>
-                    <Form.Control />
-                </Form.Group>
-            </Form.Row>
-
-            <Form.Group id="formGridCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+            <Form.Group className='forms_label' controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="NEWSLETTER" />
             </Form.Group>
-
-            <Button variant="primary" type="submit">
-                Submit
-  </Button>
+            <div className='forms_label'>
+                <Button className='form_buttons submit_button_color' variant="primary" type="submit">
+                    {typeOfForm.button_submit}
+                </Button>
+                <Button className='form_buttons close_button_color' onClick={() => toggleThroughForms(!showForm.show)} variant="danger" type="submit">
+                    {typeOfForm.button_close}
+                </Button>
+            </div>
         </Form>
+
     )
 }
 

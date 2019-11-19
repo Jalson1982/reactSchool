@@ -1,6 +1,6 @@
 {/*import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../../newRedux/globalReducer';
+import rootReducer from '../reducers/index';
 
 export const API_KEY = "43960ac18720b2eb52c3207132d1a80c";
 

@@ -1,0 +1,33 @@
+.buttons_layout {
+    margin-top: 4rem;
+    background-color: black;
+    max-width: 1400px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.buttons_title {
+    color: white;
+    padding-bottom: 2rem;
+}
+.button_style {
+    font-weight: bold;
+    margin-bottom: 0;
+    background-image: linear-gradient(black,red);
+    padding: 0.7rem 1.2rem;
+    margin: 0.7rem;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+    border-color: black;
+    transition: 0.4s;
+}
+
+.button_style:hover{
+    background-image: linear-gradient(red,black);
+    transform: scale(1.1);
+}
+
+

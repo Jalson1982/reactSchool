@@ -1,34 +1,40 @@
 import {
-
+    GET_SERIE_VIDEO,
     GET_SERIE_DETAILS,
-    GET_SERIES_VIDEO,
+
     GET_BEST_SERIES,
     GET_ALL_SERIES,
+    GET_CATEGORY_FILTER,
 
-} from '../actions/seriesActions/types';
-import {
     GET_DATA,
     GET_DATA_REJECTED,
-} from '../actions/otherActions/types';
-import {
-
+    GET_NOW_PLAY,
     GET_CASTING_CREW,
     GET_COMING_SOON,
-    GET_BEST_ACTORS
+    GET_BEST_ACTORS,
+    GET_ALL_MOVIES,
+    GET_MOVIE,
+    GET_MOVIE_DETAILS,
+    GET_MOVIE_VIDEO,
+    GET_BEST_MOVIES,
+} from './alltypes';
 
-} from '../actions/otherActions/types';
-import Home from '../../photos&icons/headerBackgrounds/Home.jpg'
-import BestMovies from '../../photos&icons/headerBackgrounds/BestMovies.jpeg'
-import BestSeries from '../../photos&icons/headerBackgrounds/BestSeries.jpg';
-import ComingSoon from '../../photos&icons/headerBackgrounds/ComingSoon.jpg';
-import movie_master from '../../photos&icons/logos/movie_master.png';
-import movie_film from '../../photos&icons/logos/movie_film.png';
-import movie_club from '../../photos&icons/logos/movie_club.png';
-import device from '../../photos&icons/logos/device.png';
-import search from '../../photos&icons/logos/search.png';
-import camera_roll from '../../photos&icons/logos/camera_roll.png';
-import mmSeries from '../../photos&icons/logos/MMseries.png'
-import comingSoon from '../../photos&icons/logos/comingSoon.png'
+
+import Home from '../assets/headerBackgrounds/Home.jpg';
+import arrow from '../assets/logos/arrow.png';
+import BestMovies from '../assets/headerBackgrounds/BestMovies.jpeg';
+import BestSeries from '../assets/headerBackgrounds/BestSeries.jpg';
+import ComingSoon from '../assets/headerBackgrounds/ComingSoon.jpg';
+import movie_master from '../assets/logos/movie_master.png';
+import movie_film from '../assets/logos/movie_film.png';
+import movie_club from '../assets/logos/movie_club.png';
+import device from '../assets/logos/device.png';
+import search from '../assets/logos/search.png';
+import camera_roll from '../assets/logos/camera_roll.png';
+import mmSeries from '../assets/logos/MMseries.png';
+import comingSoon from '../assets/logos/comingSoon.png';
+import ENV_data from '../newRedux/config'
+
 
 const initialState = {
     movies: [],
@@ -54,20 +60,13 @@ const initialState = {
         { number: 37, title: "Western" }
     ],
     details: {},
+    videoKey: ' ',
     searched: false,
     loading: true,
-    errorMessage: '',
-    moviesToDisplay: 8,
-    headerTitles: ['Amazing Movies, TV-shows, Series And More A Click Away', 'Best Movies of All Time', 'Dive in The World of Best Series', 'Be First to Ride The Wave of Upcoming '],
-    cardCompTitles: ['Now Playing In Cinema', 'Best Movies Ever', 'Series World of Joy', 'Upcoming Movies and More'],
-    logos: [movie_master, movie_film, movie_club, device, search, camera_roll, mmSeries, comingSoon],
-    pageBackgrounds: [Home, BestMovies, BestSeries, ComingSoon]
+    showModal: false,
+    errorMessage: ''
 };
 
-
-const SHOW_MORE = 'SHOW_MORE'
-const SHOW_LESS = 'SHOW_LESS'
-const GET_CATEGORY_FILTER = 'GET_CATEGORY_FILTER'
 
 
 const serieReducer = (state = initialState, action) => {
@@ -83,51 +82,43 @@ const serieReducer = (state = initialState, action) => {
                 errorMessage: action.payload,
                 loading: action.loading
             };
-        case SHOW_MORE:
-            return {
-                ...state,
-                loading: action.payload.loading,
-                moviesToDisplay: action.payload.data
-            };
-        case SHOW_LESS:
-            return {
-                ...state,
-                loading: action.payload.loading,
-                moviesToDisplay: action.payload.data
-            };
+
         case GET_BEST_SERIES:
             return {
                 ...state,
                 movies: action.payload.data,
-                categories: state.categories,
                 loading: action.payload.loading,
-                headerTitle: state.headerTitles[2],
-                cardCompTitle: state.cardCompTitles[2],
-                pageBackground: state.pageBackgrounds[2],
-                navbarLogo: state.logos[0],
-                searchLogo: state.logos[4],
-                cardLogo: state.logos[0],
-                headerLogo: state.logos[6],
-                jumbotronLogo: state.logos[2]
+                pageBackground: BestSeries,
+                headerLogo: mmSeries,
+
             };
         case GET_SERIE_DETAILS:
+            return {
+                ...state,
+                details: action.payload.data,
+                videoKey: ' ',
+                loading: action.payload.loading,
+                showModal: action.payload.showModal
+            };
+
+        case GET_SERIE_VIDEO:
+            return {
+                ...state,
+                videoKey: action.payload.data
+            };
+        default:
             return {
                 ...state,
                 categories: state.categories,
                 loading: action.loading,
                 searched: action.searched,
-                moviesToShow: state.moviesToShow,
-                headerTitle: state.headerTitles[0],
-                cardCompTitle: state.cardCompTitles[0],
-                pageBackground: state.pageBackgrounds[0],
-                navbarLogo: state.logos[0],
-                searchLogo: state.logos[4],
-                cardLogo: state.logos[0],
-                headerLogo: state.logos[1],
-                jumbotronLogo: state.logos[2]
+                pageBackground: Home,
+                navbarLogo: movie_master,
+                arrow: arrow,
+                cardLogo: movie_master,
+                headerLogo: movie_film,
+                jumbotronLogo: movie_club
             };
-        default:
-            return state;
     }
 }
 

@@ -1,0 +1,11 @@
+.new_movie_badge {
+    background-color: red;
+    opacity:0.9;
+    color: white;
+    position: absolute;
+    font-size: 4rem;
+    z-index: 1;
+    width: auto;
+
+ 
+}

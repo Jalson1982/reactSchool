@@ -1,0 +1,102 @@
+.modal_layout_wrapper{
+    background-color: black;
+    color: white;
+    border: 1px dotted white;
+}
+
+.modal_header_background{
+  background-image: linear-gradient(red,black); 
+ 
+}
+
+.modal_logo_and_title_wrapper{
+     display: flex; align-items: center;
+   justify-content: center;
+   
+}
+
+.modal_logo{
+   height: 4rem; 
+    margin: 0.8rem 1.5rem 0.8rem 1rem;
+}
+
+.modal_title{
+  padding-left: 1.5rem;
+
+  font-size: 2rem;
+  width: auto;
+}
+
+.close{
+    font-weight: 900;
+}
+
+.modal_body{
+    background-image: linear-gradient(rgba(119, 119, 119, 0.2),black);
+}
+
+.modal_img{
+    box-shadow: 2rem 0.5rem   5px rgba(62, 137, 212, 0.3);
+    padding: 1rem ;
+    border-radius: 5px;
+     margin: 2rem auto;
+      width: 100%;
+      min-width: 200px;
+      transition: 1s;
+}
+
+.modal_img:hover{
+    box-shadow: 2rem 0.5rem   5px rgba(0, 0, 255, 0.418);
+    padding: 1rem ;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.modal_video_frame{
+   width: 90%;
+   height: 25rem;
+   margin: 1rem auto;
+}
+
+.modal_badge{
+    position: absolute;
+     bottom: 33px;
+      right: 93px;
+     
+}
+
+.modal_tagline{
+    color: red;
+     text-decoration: italic;
+      font-size: 2.3rem;
+       font-weight: 600;
+        display: block;
+         margin: 2rem;
+}
+
+.modal_overview_text{
+    padding:0 2rem 1rem 2rem;
+}
+
+.modal_MM_votes_and_grades_num{
+    color:red;
+}
+
+.modal_close_and_trailer_button{
+    font-weight: bold;
+    float: right;
+    background-image: linear-gradient(black,red);
+    padding: 1.3rem ;
+    color: white;
+    margin: 1rem auto;
+    border-radius: 5px;
+    background-color: black;
+    border-color: black;
+    height: 4rem;
+    transition: 0.5s;
+}
+
+.modal_close_and_trailer_button:hover{
+    box-shadow:  1rem -1rem  rgba(0, 0, 255, 0.418);
+    transform: scale(1.1);
+}
