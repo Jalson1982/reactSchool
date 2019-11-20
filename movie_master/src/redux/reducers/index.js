@@ -4,11 +4,10 @@ import serieReducer from './serieReducer';
 
 
 export default combineReducers({
-
   movies: movieReducer,
-  series: serieReducer,
-
+  series: serieReducer
 });
+
 
 
 

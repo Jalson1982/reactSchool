@@ -1,7 +1,7 @@
 import {
     GET_DATA,
     GET_DATA_REJECTED,
-    GET_SERIE,
+
     GET_SERIE_DETAILS,
     GET_SERIE_VIDEO,
     GET_BEST_SERIES,
@@ -20,8 +20,6 @@ import {
 import axios from 'axios';
 import { generateApiHit } from './config';
 
-const SHOW_MORE = 'SHOW_MORE'
-const SHOW_LESS = 'SHOW_LESS'
 
 export const fetchData = (bool) => {
     return {
@@ -38,7 +36,6 @@ export const fetchDataFulfilled = (type, data, name) => {
             data: data,
             name: name,
             searched: true,
-            showModal: true,
             loading: false
         }
     };

@@ -48,7 +48,7 @@ class Layout extends Component {
     return (
       <div>
         {searched ? (
-          <SmartPropsHOC {...this.props.location.pathname} >
+          <SmartPropsHOC  >
             <NavBar />
             <br /><br /><br />
             <ButtonCategories />

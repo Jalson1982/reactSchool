@@ -13,6 +13,7 @@ import {
 
 } from "react-bootstrap";
 import FadeInRight from '../../animations/FadeInRight';
+import FadeOutRight from '../../animations/FadeOutRight';
 import MovieListModal from '../Modal/index';
 import { manageStateDependingOnPath } from '../../helpers/manageStateDependingOnPath';
 import { Link } from 'react-router-dom';
@@ -128,75 +129,75 @@ const MovieList = props => {
 
 
                 />) : (null)}
-            <FadeInRight>
-                < CardDeck className='movie_list_layout'  >
-                    {movies.length ? (
-                        movies.slice(0, moviesToShow).map((movie) =>
-                            <Accordion key={movie.id} >
-                                <Card className='movie_list_style' key={movie.id} xs={12}> {NewMovie(movie.release_date || movie.first_air_date)}
-                                    <Card.Img className='img' src={`http://image.tmdb.org/t/p/w342//${movie.poster_path}`} />
 
-                                    <Card.Body  >
-                                        <Container>
-                                            <img
-                                                src={cardLogo}
-                                                style={{ zIndex: '2' }}
-                                                width="30%"
-                                                height="30%"
-                                                className="d-inline-block align-top"
-                                                alt="React Bootstrap logo"
-                                            />
-                                            <Link to={'/' + movie.id}>
-                                                <Card.Title className='movie_title'>{movie.title || movie.name}</Card.Title>
-                                            </Link>
-                                            <Accordion.Collapse style={{ transition: 'height 0.6s' }} eventKey="0">
-                                                <Card.Text style={{ paddingBottom: '2rem' }}>
-                                                    {movie.overview}
+            < CardDeck className='movie_list_layout'  >
+                {movies.length ? (
+                    movies.slice(0, moviesToShow).map((movie) =>
+                        <Accordion key={movie.id} > <FadeInRight>
+                            <Card className='movie_list_style' key={movie.id} xs={12}> {NewMovie(movie.release_date || movie.first_air_date)}
+                                <Card.Img className='img' src={`http://image.tmdb.org/t/p/w342//${movie.poster_path}`} />
 
-                                                    <Button onClick={() => setModalShow(true)} className='more_details_button'  >
-                                                        {second_button}
-                                                    </Button>
-                                                </Card.Text>
-                                            </Accordion.Collapse>{/*onClick={() => { getDetails(movie.id) }}*/}
-                                            <Card.Header>
-                                                <Accordion.Toggle className='toggle_background_style' eventKey="0" >
-                                                    <p className='movie_list_button' onClick={() => getIdAndType(movie)} >
-                                                        {first_button}
-                                                    </p>
-                                                </Accordion.Toggle>
-                                                <p className='movie_votes_text'>
-                                                    <span className='movie_votes'>
-                                                        {movie.vote_count}
-                                                    </span>  {bottom_text}</p>
-                                            </Card.Header>
-                                        </Container>
-                                    </Card.Body>
-                                </Card>
-                            </Accordion>)
-                    ) : (
-                            <Container >
-                                <Row>
-                                    <Col></Col>
-                                    <Col lg={8}><h1>NO AVAILABLE CONTENT </h1></Col>
-                                    <Col></Col>
-                                </Row>
-                            </Container>
-                        )
-                    }
-                    {movies.length && moviesToShow === movies_to_show ? (
-                        <Button
-                            className='show_more_less_button'
-                            onClick={() => showMoreORLess(movies.length)} >
-                            {button_beneat_list_when_closed}
-                        </Button>
-                    ) : (movies.length && movies.length !== movies_to_show &&
-                        <Button
-                            className='show_more_less_button'
-                            onClick={() => showMoreORLess(movies_to_show)} >
-                            {button_beneat_list_when_open}
-                        </Button>
-                        )}
-                </CardDeck></FadeInRight>
+                                <Card.Body  >
+                                    <Container>
+                                        <img
+                                            src={cardLogo}
+                                            style={{ zIndex: '2' }}
+                                            width="30%"
+                                            height="30%"
+                                            className="d-inline-block align-top"
+                                            alt="React Bootstrap logo"
+                                        />
+                                        <Link to={'/' + movie.id}>
+                                            <Card.Title className='movie_title'>{movie.title || movie.name}</Card.Title>
+                                        </Link>
+                                        <Accordion.Collapse style={{ transition: 'height 0.6s' }} eventKey="0">
+                                            <Card.Text style={{ paddingBottom: '2rem' }}>
+                                                {movie.overview}
+
+                                                <Button onClick={() => setModalShow(true)} className='more_details_button'  >
+                                                    {second_button}
+                                                </Button>
+                                            </Card.Text>
+                                        </Accordion.Collapse>{/*onClick={() => { getDetails(movie.id) }}*/}
+                                        <Card.Header>
+                                            <Accordion.Toggle className='toggle_background_style' eventKey="0" >
+                                                <p className='movie_list_button' onClick={() => getIdAndType(movie)} >
+                                                    {first_button}
+                                                </p>
+                                            </Accordion.Toggle>
+                                            <p className='movie_votes_text'>
+                                                <span className='movie_votes'>
+                                                    {movie.vote_count}
+                                                </span>  {bottom_text}</p>
+                                        </Card.Header>
+                                    </Container>
+                                </Card.Body>
+                            </Card></FadeInRight>
+                        </Accordion>)
+                ) : (
+                        <Container >
+                            <Row>
+                                <Col></Col>
+                                <Col lg={8}><h1>NO AVAILABLE CONTENT </h1></Col>
+                                <Col></Col>
+                            </Row>
+                        </Container>
+                    )
+                }
+                {movies.length && moviesToShow === movies_to_show ? (
+                    <Button
+                        className='show_more_less_button'
+                        onClick={() => showMoreORLess(movies.length)} >
+                        {button_beneat_list_when_closed}
+                    </Button>
+                ) : (movies.length && movies.length !== movies_to_show &&
+                    <Button
+                        className='show_more_less_button'
+                        onClick={() => showMoreORLess(movies_to_show)} >
+                        {button_beneat_list_when_open}
+                    </Button>
+                    )}
+            </CardDeck>
         </div >
     )
 }

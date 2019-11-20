@@ -70,6 +70,9 @@ const initialState = {
 
 
 const globalReducer = (state = initialState, action) => {
+
+
+
     switch (action.type) {
         case GET_DATA:
             return {
@@ -79,8 +82,8 @@ const globalReducer = (state = initialState, action) => {
         case GET_DATA_REJECTED:
             return {
                 ...state,
-                errorMessage: action.payload,
-                loading: action.loading
+                errorMessage: action.payload.error,
+                loading: action.payload.loading
             };
 
 
@@ -142,8 +145,8 @@ const globalReducer = (state = initialState, action) => {
                 ...state,
                 details: action.payload.data,
                 videoKey: ' ',
-                loading: action.payload.loading,
-                showModal: action.payload.showModal
+                loading: action.payload.loading
+
             };
         case GET_BEST_SERIES:
             return {
@@ -159,8 +162,8 @@ const globalReducer = (state = initialState, action) => {
                 ...state,
                 details: action.payload.data,
                 videoKey: ' ',
-                loading: action.payload.loading,
-                showModal: action.payload.showModal
+                loading: action.payload.loading
+
             };
 
         case GET_MOVIE_VIDEO:

@@ -1,39 +1,20 @@
 import {
     GET_SERIE_VIDEO,
     GET_SERIE_DETAILS,
-
     GET_BEST_SERIES,
-    GET_ALL_SERIES,
-    GET_CATEGORY_FILTER,
-
     GET_DATA,
-    GET_DATA_REJECTED,
-    GET_NOW_PLAY,
-    GET_CASTING_CREW,
-    GET_COMING_SOON,
-    GET_BEST_ACTORS,
-    GET_ALL_MOVIES,
-    GET_MOVIE,
-    GET_MOVIE_DETAILS,
-    GET_MOVIE_VIDEO,
-    GET_BEST_MOVIES,
-} from './alltypes';
+    GET_DATA_REJECTED
+} from '../../constants';
 
+import Home from '../../assets/headerBackgrounds/Home.jpg';
+import arrow from '../../assets/logos/arrow.png';
+import BestSeries from '../../assets/headerBackgrounds/BestSeries.jpg';
+import movie_master from '../../assets/logos/movie_master.png';
+import movie_film from '../../assets/logos/movie_film.png';
+import movie_club from '../../assets/logos/movie_club.png';
+import mmSeries from '../../assets/logos/MMseries.png';
 
-import Home from '../assets/headerBackgrounds/Home.jpg';
-import arrow from '../assets/logos/arrow.png';
-import BestMovies from '../assets/headerBackgrounds/BestMovies.jpeg';
-import BestSeries from '../assets/headerBackgrounds/BestSeries.jpg';
-import ComingSoon from '../assets/headerBackgrounds/ComingSoon.jpg';
-import movie_master from '../assets/logos/movie_master.png';
-import movie_film from '../assets/logos/movie_film.png';
-import movie_club from '../assets/logos/movie_club.png';
-import device from '../assets/logos/device.png';
-import search from '../assets/logos/search.png';
-import camera_roll from '../assets/logos/camera_roll.png';
-import mmSeries from '../assets/logos/MMseries.png';
-import comingSoon from '../assets/logos/comingSoon.png';
-import ENV_data from '../newRedux/config'
+//import ENV_data from '../newRedux/config'
 
 
 const initialState = {
